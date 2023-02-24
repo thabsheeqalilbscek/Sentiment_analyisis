@@ -47,7 +47,7 @@
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-menu" aria-controls="navbars-rs-food" aria-expanded="false" aria-label="Toggle navigation">
                     <i class="fa fa-bars"></i>
                 </button>
-                    <a class="navbar-brand" href="/">
+                    <a class="navbar-brand" href="/admin_home">
                         <!--<img src="/static/admin_temp/images/logo.png" class="logo" alt="">-->
                         <i class="fa fa-shopping-bag"></i><span>ECOM - </span>RECOMMENDOR
                     </a>
@@ -57,9 +57,25 @@
                 <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="collapse navbar-collapse" id="navbar-menu">
                     <ul class="nav navbar-nav ml-auto" data-in="fadeInDown" data-out="fadeOutUp">
-                        <li class="nav-item active"><a class="nav-link" href="/">HOME</a></li>
-                        <li class="nav-item active"><a class="nav-link" href="#login">LOGIN</a></li>
-                        <li class="nav-item active"><a class="nav-link" href="#login">SELLER SIGNUP</a></li>
+                        <li class="nav-item active"><a class="nav-link" href="/admin_home">HOME</a></li>
+                        <li class="dropdown">
+                            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">CATEGORY <i class="fa fa-caret-down"></i></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="/admin_add_category#blog">Add Category</a></li>
+                                <li><a href="/admin_view_category#blog">View Category</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">SELLERS <i class="fa fa-caret-down"></i></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="/admin_seller_approval#blog">New Sellers</a></li>
+                                <li><a href="/admin_view_approved_sellers#blog">Approved Sellers</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item"><a class="nav-link" href="/admin_view_users#blog">USERS</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/admin_view_complaints#blog">COMPLAINTS</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/change_password#blog">CHANGE PASSWORD</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/logout">LOGOUT</a></li>
                     </ul>
                 </div>
                 <!-- /.navbar-collapse -->
@@ -145,115 +161,38 @@
                 </div>
             </li>
         </ul>
-        <div class="slides-navigation" id="login">
+        <div class="slides-navigation" id="blog">
             <a href="#" class="next"><i class="fa fa-angle-right" aria-hidden="true"></i></a>
             <a href="#" class="prev"><i class="fa fa-angle-left" aria-hidden="true"></i></a>
         </div>
     </div>
     <!-- End Slider -->
 
-
-     <!-- Start Contact Us  -->
-    <div class="contact-box-main">
+    <!-- Start Blog  -->
+    <div class="latest-blog">
         <div class="container">
             <div class="row">
-                <div class="col-lg-4 col-sm-4">
-                    <div class="contact-info-left">
-                        <h2>LOG IN</h2>
-                        <form  method="post" action="/">
-                            <div class="row">
-                                <div class="col-md-12">
-                                    <div class="form-group">
-                                        <input type="text" placeholder="Your Email" id="email" class="form-control" name="textfield" required data-error="Please enter your email">
-                                        <div class="help-block with-errors"></div>
-                                    </div>
-                                </div>
-                                <div class="col-md-12">
-                                    <div class="form-group">
-                                        <input type="password" class="form-control" id="subject" name="textfield2" placeholder="Password" required data-error="Please enter your Subject">
-                                        <div class="help-block with-errors"></div>
-                                    </div>
-                                </div>
-                                <div class="col-md-12">
-                                    <div class="submit-button text-center">
-                                        <input class="btn btn-success" type="submit" value="LOGIN"/>
-                                        <div id="msgSubmit" class="h3 text-center hidden"></div>
-                                        <div class="clearfix"></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </form>
+                <div class="col-lg-12">
+                    <div class="title-all text-center">
+                        <h1>{{ session.head }}</h1>
                     </div>
                 </div>
-                <div class="col-lg-8 col-md-8">
-                    <div class="contact-form-right">
-                        <h2>DONT HAVE ACCOUNT</h2>
-                        <form  method="post" action="/seller_register">
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <input type="text" placeholder="Your Name" id="name" class="form-control" name="textfield" required data-error="Please enter your name">
-                                        <div class="help-block with-errors"></div>
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <input type="email" class="form-control" id="email1" name="textfield2" placeholder="Email" required data-error="Please enter your email">
-                                        <div class="help-block with-errors"></div>
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <input type="text" class="form-control" id="phone" name="textfield3" placeholder="Phone" required data-error="Please enter your phone">
-                                        <div class="help-block with-errors"></div>
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <input type="text" class="form-control" id="house" name="textfield4" placeholder="House" required data-error="Please enter your housename">
-                                        <div class="help-block with-errors"></div>
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <input type="text" class="form-control" id="place" name="textfield5" placeholder="Place" required data-error="Please enter your place">
-                                        <div class="help-block with-errors"></div>
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <input type="text" class="form-control" id="post" name="textfield6" placeholder="Post" required data-error="Please enter your post">
-                                        <div class="help-block with-errors"></div>
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <input type="text" class="form-control" id="pin" name="textfield7" placeholder="Pin" required data-error="Please enter your pin">
-                                        <div class="help-block with-errors"></div>
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <input type="password" class="form-control" id="password" name="textfield8" placeholder="Password" required data-error="Please enter your password">
-                                        <div class="help-block with-errors"></div>
-                                    </div>
-                                </div>
-                                <div class="col-md-12">
-                                    <div class="submit-button text-center">
-                                        <input class="btn btn-success" type="submit" value="REGISTER"/>
-                                        <div id="msgSubmit1" class="h3 text-center hidden"></div>
-                                        <div class="clearfix"></div>
-                                    </div>
-                                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12 col-lg-12 col-xl-12">
+                    <div class="blog-box">
+                        <div class="blog-content">
+                            <div class="title-blog">
+                                {% block body %}
+                                {% endblock %}
                             </div>
-                        </form>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <!-- End Cart -->
-
+    <!-- End Blog  -->
 
 
     <!-- Start Instagram Feed  -->
@@ -381,7 +320,7 @@
 
     <!-- Start copyright  -->
     <div class="footer-copyright">
-        <p class="footer-company">All Rights Reserved. &copy; 2018 <a href="/">ECOM-RECOMMENDOR</a></p>
+        <p class="footer-company">All Rights Reserved. &copy; 2018 <a href="/admin_home">ECOM-RECOMMENDOR</a></p>
     </div>
     <!-- End copyright  -->
 
