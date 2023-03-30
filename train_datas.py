@@ -159,52 +159,16 @@ rf =RandomForestClassifier(n_estimators=100)
 rf.fit(X, Y)
 pred=rf.predict(X_test)
 acc=accuracy_score(Y_test, pred)*100
-print("Accuracy Random Forest: ", acc)
-#f1-score
-from sklearn.metrics import f1_score
-rf_f1=f1_score(y_true, pred, average="weighted")
-print("F1 score Random Forest", rf_f1)
-#recall
-from sklearn.metrics import recall_score
-rf_recall=recall_score(y_true, pred, average="weighted")
-print("Recall Random Forest", rf_recall)
+#print("Accuracy Random Forest: ", acc)
 
 
 
 
-#NuSVC
-import numpy as np
-from sklearn.pipeline import make_pipeline
-from sklearn.preprocessing import StandardScaler
-from sklearn.svm import NuSVC
-clf = make_pipeline(StandardScaler(), NuSVC())
-clf.fit(X, y)
-nu_pred=clf.predict(X_test)
-nu_acc=accuracy_score(Y_test, nu_pred)*100
-print("Accuracy NuSVC ", nu_acc)
-
-
-#MULTINOMIAL NB
-from sklearn.naive_bayes import MultinomialNB
-clf = MultinomialNB(force_alpha=True)
-clf.fit(X, y)
-mnb_pred=clf.predict(X_test)
-mnb_acc=accuracy_score(Y_test, mnb_pred)*100
-print("Accuracy Multinomial NB ", mnb_acc)
-
-
-#BERNOULI NB
-from sklearn.naive_bayes import BernoulliNB
-clf = BernoulliNB(force_alpha=True)
-clf.fit(X, Y)
-bnb_pred=clf.predict(X_test)
-bnb_acc=accuracy_score(Y_test, bnb_pred)*100
-print("Accuracy Bernoulli NB ", bnb_acc)
 
 
 
 #prediction
-text="Bring all your family "
+text="absolutely good product"
 feats1, sent1=other_features_(text)
 print(feats1)
 arr=np.array([feats1])
