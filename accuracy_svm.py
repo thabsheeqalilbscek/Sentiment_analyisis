@@ -29,6 +29,16 @@ def find_acc_rf():
     acc=accuracy_score(Y_test, pred)
     print("\nAccuracy : ", round(acc*100, 2), "%")
 
+    #f1-score
+    from sklearn.metrics import f1_score
+    svm_f1=f1_score(Y_test, pred, average="weighted")
+    print("F1 score svm", svm_f1)
+
+    # recall
+    from sklearn.metrics import recall_score
+    svm_recall = recall_score(Y_test, pred, average="weighted")
+    print("Recall svm", svm_recall)
+
 
 
 find_acc_rf()
