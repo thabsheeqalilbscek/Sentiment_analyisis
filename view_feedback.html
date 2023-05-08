@@ -1,0 +1,28 @@
+{% extends 'ADMIN/admin.html' %}
+{% block body %}
+
+<body>
+<form id="form1" name="form1" method="post" action="">
+  <table class="table table-light">
+    <tr  bgcolor=#CCCCFF>
+      <th  scope="col">#</th>
+      <th scope="col">User name</th>
+      <th  scope="col">Store name</th>
+      <th  scope="col">Feedback</th>
+      <th  scope="col">Date</th>
+
+    </tr>
+      {% for i in rate %}
+    <tr>
+      <td>{{ loop.index }}&nbsp;</td>
+      <td >&nbsp;{{ i['username'] }}</td>
+      <td >{{ i['store_name'] }}</td>
+      <td >{{ i['feedback'] }}</td>
+      <td >{{ i['date'] }}</td>
+
+     </tr>
+      {% endfor %}
+  </table>
+</form>
+</body>
+{% endblock %}

@@ -1,0 +1,17 @@
+{% extends 'ADMIN/admin.html' %}
+{% block body %}
+
+<body><form action="" method="post" enctype="multipart/form-data"><table class="table table-light">
+  <tr>
+    <th scope="row">Reply</th>
+    <td><label for="fileField"></label>
+      <label for="textarea"></label>
+      <textarea class="form-control" name="textarea" id="textarea" cols="45" rows="5" required></textarea></td>
+  </tr>
+  <tr>
+    <th colspan="2" scope="row"><input type="submit" name="button" id="button" value="send" class="btn btn-success" /></th>
+    </tr>
+</table>
+</form>
+</body>
+{% endblock %}
