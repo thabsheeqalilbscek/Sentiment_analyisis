@@ -1,0 +1,38 @@
+{% extends 'STORE/store.html' %}
+{% block body %}
+<body>
+<form id="form1" name="form1" method="post" action="">
+    <table class="table table-light">
+  <tr bgcolor=#CCCCFF>
+    <th scope="col">#</th>
+    <th scope="col"> Product name</th>
+    <th scope="col"> Color</th>
+    <th scope="col"> Category</th>
+    <th scope="col">Details</th>
+    <th scope="col">Image</th>
+    <th scope="col">Quantity</th>
+    <th  scope="col">price</th>
+    <th  scope="col"></th>
+
+  </tr>
+    {% for i in product %}
+  <tr>
+    <td>{{ loop.index }}</td>
+    <td>&nbsp;{{ i['name'] }}</td>
+    <td>&nbsp;{{ i['colour'] }}</td>
+    <td>&nbsp;{{ i['category'] }}</td>
+    <td>&nbsp;{{ i['des'] }}</td>
+    <td>&nbsp;<img class="img-circle" src="{{ i['photo'] }}" alt="license" height="100" width="100"></td>
+
+
+
+    <td >&nbsp;{{ i['quantity'] }}</td>
+    <td >&nbsp;{{ i['price'] }}</td>
+    <td>&nbsp;<a class="btn btn-success" href="/edit_product/{{ i['id'] }}">EDIT</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class="btn btn-danger" href="/delete/{{ i['id'] }}" onclick="return confirm('ARE YOU SURE')">DELETE</a> </td>
+  </tr>
+    {% endfor %}
+</table>
+
+</form>
+</body>
+{% endblock %}

@@ -1,0 +1,24 @@
+{% extends 'STORE/store.html' %}
+{% block body %}
+<body>
+<form action="" method="get" enctype="multipart/form-data" name="form1" id="form1">
+  <div align="center">
+    <table class="table table-hover">
+      <tr>
+        <td align="center"><h3>SCAN QR</h3></td>
+      </tr>
+      <tr>
+        <td align="center"><img src="{{ path }}" height="300" width="300" /></td>
+      </tr>
+        <tr>
+            <td align="right">
+                <a href="/show_qr2" class="btn btn-success">NEXT</a>
+            </td>
+        </tr>
+    </table>
+  </div>
+
+</form>
+</body>
+{% endblock %}
+

@@ -1,0 +1,54 @@
+{% extends 'STORE/store.html' %}
+{% block body %}
+<body>
+<form action="" method="get" enctype="multipart/form-data" name="form1" id="form1">
+  <div align="center">
+    <table  border="0" class="table table-hover">
+      <tr>
+        <th  scope="row">Store Name</th>
+        <td >{{ i['store_name'] }}</td>
+      </tr>
+
+
+      <tr>
+        <th scope="row">District</th>
+        <td >{{ i['store_location'] }} </td>
+      </tr>
+      <tr>
+        <th scope="row">Place</th>
+        <td >{{ i['place'] }}</td>
+      </tr><tr>
+        <th scope="row">Post</th>
+        <td >{{ i['post'] }}</td>
+        </tr>
+      <tr>
+        <th scope="row">Pin</th>
+        <td >{{ i['pin'] }}</td>
+      </tr>
+
+      <tr>
+        <th scope="row">Licence No</th>
+        <td > {{ i['licenseno'] }}</td>
+      </tr>
+
+
+      <tr>
+        <th scope="row">Phno</th>
+        <td >{{ i['store_phone'] }}</td>
+      </tr>
+      <tr>
+        <th scope="row">Email</th>
+        <td >{{ i['store_email'] }}</td>
+      </tr>
+
+      <tr align="center">
+        <th scope="row">
+          <a  class="form-control col-sm-4  btn btn-success" href="/store_edit" >EDIT</a></th>
+      </tr>
+  </table>
+  </div>
+
+</form>
+</body>
+{% endblock %}
+

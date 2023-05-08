@@ -1,0 +1,28 @@
+{% extends 'STORE/store.html' %}
+{% block body %}
+
+<body>
+<form id="form1" name="form1" method="post" action="">
+  <table class="table table-light">
+    <tr>
+      <th  scope="col">#</th>
+      <th scope="col">Sender_name</th>
+
+      <th  scope="col">Rating</th>
+      <th  scope="col">Date</th>
+
+    </tr>
+      {% for i in rate %}
+    <tr>
+      <td>{{ loop.index }}&nbsp;</td>
+      <td >&nbsp;{{ i['username'] }}</td>
+
+      <td >{{ i['rating'] }}</td>
+      <td >{{ i['date'] }}</td>
+
+     </tr>
+      {% endfor %}
+  </table>
+</form>
+</body>
+{% endblock %}

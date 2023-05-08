@@ -1,0 +1,98 @@
+{% extends 'STORE/store.html' %}
+{% block body %}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+</head>
+
+<body>
+<h4 align="center">VIEW ORDER ITEMS</h4>
+<div align="center">
+{#  <table width="710" border="1">#}
+{#    <tr>#}
+{#      <th scope="col">#</th>#}
+{#      <th scope="col">ITEM NAME</th>#}
+{#      <th scope="col">QUANTITY</th>#}
+{#      <th scope="col">PRICE</th>#}
+{#    </tr>#}
+{#        {% for i in data %}#}
+{#    <tr>#}
+{#      <td>&nbsp;{{ loop.index }}</td>#}
+{#      <td>&nbsp;{{ i['item_name'] }}</td>#}
+{#      <td>&nbsp;{{ i['count'] }}</td>#}
+{#      <td>&nbsp;Rs {{ i['price'] }}</td>#}
+{#    </tr>#}
+{#      {% endfor %}#}
+{#  </table>#}
+{#</div>#}
+{#<table width="100" border="0">#}
+{#  <tr>#}
+{#    <th width="443" scope="col">&nbsp;</th>#}
+{#    <th width="104" scope="col">Total</th>#}
+{#    <th width="140" scope="col"><div align="left">Rs {{ data1 }} </div></th>#}
+{#  </tr>#}
+{#</table>#}
+
+<div class="table table-light">
+            <table width="1115" border="0" class="table table-hover">
+              <thead>
+                <tr  bgcolor=#CCCCFF>
+                <th scope="col">#</th>
+      <th scope="col">PRODUCT NAME</th>
+      <th scope="col">PRICE</th>
+      <th scope="col">QUANTITY</th>
+      <th scope="col">AMOUNT</th>
+                </tr>
+              </thead>
+              <tbody>
+                {% for i  in data %}
+                <tr>
+                <td>&nbsp;{{ loop.index }}</td>
+      <td>&nbsp;{{ i['name'] }}</td>
+      <td>&nbsp;Rs {{ i['price'] }}</td>
+      <td>&nbsp;{{ i['bquantity'] }}</td>
+      <td>&nbsp; {{ i['total_price1'] }}</td>
+                </tr>
+                {% endfor %}
+
+              </tbody>
+            </table>
+</div>
+
+
+<div class="table-responsive">
+            <table border="0" align="center" class="table table-hover">
+              <thead>
+                <tr  bgcolor=#CCCCFF>
+                <th scope="col"></th>
+      <th scope="col">TOTAL</th>
+      <th scope="col">{{ data1 }}</th>
+      <th scope="col"></th>
+      <th scope="col"></th>
+      <th scope="col"></th>
+      <th scope="col"></th>
+
+                    <th scope="col">
+{#                        <a href="/generate_qr/{{ mid }}" class="btn btn-primary">Generate QR</a>#}
+                    </th>
+
+                </tr>
+              </thead>
+            </table>
+
+
+
+
+
+</div>
+
+
+
+
+
+</body>
+</html>
+
+{% endblock %}

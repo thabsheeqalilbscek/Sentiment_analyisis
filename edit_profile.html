@@ -1,0 +1,68 @@
+{% extends 'STORE/store.html' %}
+{% block body %}
+<body>
+<form action="" method="post" enctype="multipart/form-data" name="form1" id="form1"><table  class="table table-light">
+  <tr>
+    <th scope="row">Store Name</th>
+    <td > <input type="text" class="form-control" name="store" id="textfield2"  value="{{ i['store_name'] }}"/></td>
+  </tr>
+
+
+  <tr>
+    <th  scope="row">District</th>
+    <td ><label for="select"></label>
+      <select name="select" id="select" required class="form-control">
+          <option>{{ i['store_location'] }}</option>
+          <option>Alappuzha</option>
+          <option>Ernakulam</option>
+          <option>Idukki</option>
+          <option>Kannur</option>
+          <option>Kasargod</option>
+          <option>Kollam</option>
+          <option>Kottayam</option>
+          <option>Kozhikode</option>
+          <option>Malapuram</option>
+          <option>Palakkad</option>
+          <option>Pathanamthitta</option>
+          <option>Thiruvananthapuram</option>
+          <option>Thrissur</option>
+          <option>Wayanad</option>
+      </select>
+  </tr>
+
+     <tr>
+    <th  scope="row">Place</th>
+    <td ><label for="textfield3"></label>
+      <input type="text" class="form-control" name="place" id="textfield3" value="{{ i['place'] }}"/></td>
+  </tr>
+     <tr>
+    <th scope="row">Post</th>
+    <td><label for="textfield3"></label>
+      <input type="text" class="form-control" name="post" id="textfield3" value="{{ i['post'] }}"  /></td>
+  </tr>
+    <tr>
+    <th  scope="row">Pin</th>
+    <td ><label for="textfield3"></label>
+      <input type="text" class="form-control" name="pin" id="textfield3" value="{{ i['pin'] }}"  /></td>
+  </tr>
+ <tr>
+    <th scope="row">License</th>
+       <td><input type="text" class="form-control" name="lic" id="textfield3" value="{{ i['licenseno'] }}"  /></td>
+  </tr>
+
+
+    <tr>
+    <th  scope="row">Phone</th>
+    <td ><label for="textfield3"></label>
+      <input type="text" class="form-control" name="phone" id="textfield3" value="{{ i['store_phone'] }}"  /></td>
+  </tr>
+  <tr>
+    <th colspan="2" scope="row">
+      <input type="submit" name="button" id="button" value="Update" class="btn btn-success"/></th>
+    </tr>
+</table>
+
+</form>
+</body>
+{% endblock %}
+

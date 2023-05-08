@@ -1,0 +1,40 @@
+{% extends 'STORE/store.html' %}
+{% block body %}
+<body>
+<form action="" method="post" enctype="multipart/form-data" name="form1" id="form1"><table class="table table-light">
+  <tr>
+    <th >Product Name</th>
+    <td ><label for="textfield"></label>
+      <input type="text" class="form-control" name="textfield" id="textfield" value="{{ i['name'] }}" /></td>
+  </tr>
+  <tr>
+    <th >Product Details</th>
+    <td > <label for="textarea"></label>
+      <textarea class="form-control" name="textarea" id="textarea" cols="45" rows="5" >{{ i['des'] }}</textarea></td>
+  </tr>
+  <tr>
+    <th >Image</th>
+    <td ><label for="fileField"></label><img src="{{ i['photo'] }}" alt="{{ i['name'] }}" height="100" width="100">
+      <input type="file" class="form-control" name="fileField" id="fileField" /></td>
+  </tr>
+
+  <tr>
+    <th >Price</th>
+    <td ><label for="textfield3"></label>
+      <input type="text" class="form-control" name="price" id="textfield3" value="{{ i['price'] }}" /></td>
+  </tr>
+  <tr>
+    <th>Quantity</th>
+    <td><label for="textfield4"></label>
+      <input type="text" class="form-control" name="textfiel" id="textfield4" value="{{ i['quantity'] }}"/></td>
+  </tr>
+
+    <tr>
+      <th align="center"  colspan="2" ><input align="center" type="submit" name="button" id="button" value="update" class="btn btn-success" /></th>
+    </tr>
+</table>
+
+</form>
+</body>
+
+{% endblock %}

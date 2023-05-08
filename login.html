@@ -1,72 +1,56 @@
-{#<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">#}
-{#<html xmlns="http://www.w3.org/1999/xhtml">#}
-{#<head>#}
-{#<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />#}
-{#<title>Untitled Document</title>#}
-{#</head>#}
-{##}
-{#<body>#}
-{#<form id="form1" name="form1" method="post" action="">#}
-{#  <table width="200" border="1">#}
-{#    <caption>#}
-{#      login#}
-{#    </caption>#}
-{#    <tr>#}
-{#      <th scope="row">username</th>#}
-{#      <td><label for="textfield"></label>#}
-{#      <input type="text" name="textfield" id="textfield" /></td>#}
-{#    </tr>#}
-{#    <tr>#}
-{#      <th scope="row">password</th>#}
-{#      <td><label for="textfield2"></label>#}
-{#      <input type="password" name="textfield2" id="textfield2" /></td>#}
-{#    </tr>#}
-{#    <tr>#}
-{#      <th colspan="2" scope="row"><input type="submit" name="button" id="button" value="login" /></th>#}
-{#    </tr>#}
-{#      <tr>#}
-{#          <th colspan="2" scope="row"><a href="/hospital_register">Hospital Sign-In</a></th>#}
-{#    </tr>#}
-{#  </table>#}
-{#</form>#}
-{#</body>#}
-{#</html>#}
-
-
 <!doctype html>
 <html lang="en">
   <head>
-  	<title>ECOM - RECOMMENDOR</title>
+  	<title>Login 10</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
 	<link href="https://fonts.googleapis.com/css?family=Lato:300,400,700&display=swap" rel="stylesheet">
 
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-
+	
 	<link rel="stylesheet" href="/static/login/css/style.css">
 
 	</head>
-	<body class="img js-fullheight" style="background-image: url(/static/login/images/doc.jpg);">
+	<body class="img js-fullheight" style="background-image: url(/static/login/images/banner.jpg);">
 	<section class="ftco-section">
 		<div class="container">
 			<div class="row justify-content-center">
-				<div class="col-md-6 text-center mb-5">
-					<h2 class="heading-section">ECOM - RECOMMENDOR</h2>
-				</div>
+
 			</div>
 			<div class="row justify-content-center">
 				<div class="col-md-6 col-lg-4">
 					<div class="login-wrap p-0">
-		      	<h3 class="mb-4 text-center">Have an account?</h3>
+		      	<h3 class="mb-4 text-center">Login</h3>
 		      	<form action="#" class="signin-form" method="post">
-		      		
-	          
+		      		<div class="form-group">
+		      			<input type="text" class="form-control" placeholder="Username" name="Username" required>
+		      		</div>
+	            <div class="form-group">
+	              <input id="password-field" type="password" class="form-control" placeholder="Password" name="Password" required>
+	              <span toggle="#password-field" class="fa fa-fw fa-eye field-icon toggle-password"></span>
+	            </div>
+	            <div class="form-group">
+	            	<button type="submit" class="form-control btn btn-primary submit px-3">Sign In</button>
+	            </div><div align="center"><a  href="/forgot" > Forgott password</a></div>
+
+	          </form>
+
+	          <div class="social d-flex text-center">
+	          	<a href="/store_register" class="px-2 py-2 mr-md-1 rounded"><span class="ion-logo-facebook mr-2"></span>New store registration</a>
+{#	          	<a href="/user_reg" class="px-2 py-2 ml-md-1 rounded"><span class="ion-logo-twitter mr-2"></span> New customer registration</a><br>#}
+
+	          </div>
 		      </div>
 				</div>
 			</div>
 		</div>
 	</section>
+
+	<script src="/static/login/js/jquery.min.js"></script>
+  <script src="/static/login/js/popper.js"></script>
+  <script src="/static/login/js/bootstrap.min.js"></script>
+  <script src="/static/login/js/main.js"></script>
 
 	</body>
 </html>

@@ -1,0 +1,73 @@
+{% extends 'STORE/store.html' %}
+{% block body %}
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+        <script type="text/javascript">
+            function generateBarCode()
+            {
+                var nric = $('#text').val();
+                var url = 'https://api.qrserver.com/v1/create-qr-code/?data=' + nric + '&amp;size=1000x1000';
+                $('#barcode').attr('src', url);
+            }
+        </script>
+<body>
+<form id="form1" name="form1" method="post" action=""><table class="table table-light" >
+  <tr>
+    <th >#</th>
+    <th> Product</th>
+    <th >Customer name</th>
+    <th >Image</th>
+    <th >Price</th>
+    <th >Quantity</th>
+    <th >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Date</th>
+    <th >Amount</th>
+    <th ></th>
+{#    <th >Pymant method</th>#}
+{#      <th ><pre><b>Delivery Status</b></pre></th>#}
+  </tr>
+    {% for i in bill %}
+  <tr>
+    <td>{{ loop.index }}</td>
+    <td>&nbsp;{{ i['product_name'] }}</td>
+    <td>&nbsp;{{ i['username'] }}</td>
+    <td>&nbsp;<img src="{{ i['p_image'] }}" alt="license" height="100" width="100"></td>
+
+
+    <td>&nbsp;{{ i['price'] }}</td>
+    <td >&nbsp;{{ i['count1'] }}</td>
+    <td ><pre>{{ i['date'] }}</pre></td>
+    <td >{{ i['tamount'] }}</td>
+{#    <td>{% if i['m_status']=='paid' %}<h4><font color="red">ONLINE</font> </h4>{% else %}<h4><font color="red">OFFLINE</font> </h4> {% endif %}</td>#}
+{#      <td >{% if i['b_status']=='paid'or i['b_status']=='borrowed' %}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/delivery/{{ i['ordr_id'] }}" class="btn btn-success">DELIVERY</a>{% elif i['b_status']=='deliverd' %}----<font color="green">DELIVERD</font>---- {% elif i['b_status']=='returned' %}----<font color="green">RETURNED</font>---- {% else %}----<font color="green">RETURNED</font>---- {% endif %}</td>#}
+      <td>   <a href="/qrcode/{{ i['master_id'] }}" class="btn btn-success">GENERATE QR</a>  </td>
+{#      <input id="text" type="text" value="abcd" style="Width:20%"/>#}
+
+  </tr>
+    {% endfor %}
+</table>
+<pre><h3 align="center">TOTAL INCOME=<font color="red">{{ bll['tamount'] }}</font> </h3></pre>
+
+</form>
+{#<div id="myDIV">#}
+{#<table width="992" height="206" border="0">#}
+{#  <tr>#}
+{#    <th scope="row"><div align="center">#}
+{##}
+{#      <input type ="submit" id="aaa" value = "Generate Qr" onClick='generateBarCode();'>#}
+{#    </div></th>#}
+{#  </tr>#}
+{#  <tr>#}
+{#    <th height="170" scope="row"><div align="center"><img id='barcode'#}
+{#            src="https://api.qrserver.com/v1/create-qr-code/?data=HelloWorld&amp;size=1000x1000"#}
+{#            alt=""#}
+{#            title="HELLO"#}
+{#            width="200"#}
+{#            height="200" /></div></th>#}
+{#  </tr>#}
+{#</table>#}
+{#</div>#}
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+</body>
+
+{% endblock %}

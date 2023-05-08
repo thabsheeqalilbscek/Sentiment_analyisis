@@ -1,0 +1,57 @@
+{% extends 'STORE/store.html' %}
+{% block body %}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+</head>
+
+<body>
+<h4 align="center">VIEW PAYMENTS</h4>
+<div align="center">
+
+
+
+<div class="table-responsive">
+            <table width="1160" BORDER="0" class="table table-hover">
+              <thead>
+                <tr  bgcolor=#CCCCFF>
+                 <th scope="col">#</th>
+      <th scope="col">CUSTOMER NAME</th>
+      <th scope="col">PHONE</th>
+      <th scope="col">EMAIL</th>
+      <th scope="col">DATE</th>
+      <th scope="col">TOTAL AMOUNT</th>
+                </tr>
+              </thead>
+              <tbody>
+                {% for i  in data %}
+                <tr>
+                 <td>&nbsp;{{ loop.index }}</td>
+      <td>&nbsp;{{ i['user_name'] }}</td>
+      <td>&nbsp;&nbsp;{{ i['phone_number'] }}</td>
+      <td>&nbsp;&nbsp;{{ i['email'] }}</td>
+      <td>&nbsp;&nbsp;{{ i['date'] }}</td>
+      <td>&nbsp;&nbsp;{{ i['total_amount'] }}</td>
+                </tr>
+                {% endfor %}
+
+              </tbody>
+            </table>
+    </div>
+
+
+</div>
+
+
+
+
+
+
+
+
+</body>
+</html>
+
+{% endblock %}
